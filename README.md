@@ -21,7 +21,6 @@ public class Fund {
     private String fID;
     private String fName;
     private double fEWorth;
-    //下略
 }
 ```
 
