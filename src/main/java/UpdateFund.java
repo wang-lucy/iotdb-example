@@ -7,7 +7,6 @@ import java.util.HashMap;
 public class UpdateFund {
 
     public static void main(String[] args) throws SQLException, InterruptedException {
-        String[] fundID = {"000001","000003","000004","000005","000006","000008","000014","000015","000016","000017"};
         String[] stockID = {"sh600000","sh600004","sh600006","sh600007","sh600008","sh600009","sh600010","sh600011","sh600012","sh600015"};
         FundManage fundManage = new FundManage();
 
@@ -20,15 +19,13 @@ public class UpdateFund {
                 return;
             }
             Statement statement = connection.createStatement();
-            long times = System.currentTimeMillis();//时间戳
+            long times = System.currentTimeMillis(); //时间戳
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String dateString = formatter.format(times);
             for (int i = 0;i < 10;i++) {
-                //String id = fundID[i];
                 String id = stockID[i];
                 Fund fund = fundHashMap.get(id);
                 double FEWorth = fund.getfEWorth();
-                //String sql = "insert into root.fund.f" + i + "(timestamp,value) values(" + dateString +"," + FEWorth + ");";
                 String sql = "insert into root.stock.s" + i + "(timestamp,price) values(" + dateString +"," + FEWorth + ");";
                 System.out.println(sql);
                 statement.addBatch(sql);
