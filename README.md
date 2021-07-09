@@ -112,4 +112,4 @@ while(true) {
 ### 四、数据可视化
 
 在Grafana中添加IoTDB数据源，选择时间序列进行可视化，得到的结果如下：
-
+![avatar](https://github.com/wang-lucy/iotdb-example/blob/master/result.PNG)
